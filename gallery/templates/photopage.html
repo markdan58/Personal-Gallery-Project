@@ -1,0 +1,51 @@
+{% load bootstrap3 %}
+{% load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    {% include "search.html" %}
+
+
+
+    {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+    {% endblock %}
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="masonry">
+            {% for photo_item in photos%}
+            <div class="item">
+                <!--Display news images  -->
+                <a data-fancybox data-caption='<p>Name: {{photo_item.name}}</p><p>Category:{{photo_item.category.name}}</p><p>Photo was taken in:{{photo_item.location.place}}</p>'><img
+                        src="{{photo_item.photoimage.url}}" class="img-responsive" alt="Image"></a>
+            </div>
+
+            {% endfor %}
+        </div>
+
+
+        {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+        {% bootstrap_javascript %}
+        {% endblock %}
+
+
+    </div>
+
+
+    </div>
+
+
+    </div>
+
+</body>
+
+</html>
