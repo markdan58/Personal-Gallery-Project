@@ -39,7 +39,7 @@ Add additional notes about how to deploy this on a live system
 * [BOostrap]- The web css 
 
 # Authors
-*DANMARK MASAI** -(https://github.com/markdan58/Personal-Gallery-Project)
+*DANMARK MASAI* (https://github.com/markdan58/Personal-Gallery-Project)
 
 # License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

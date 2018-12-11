@@ -27,12 +27,9 @@
 
 
         <!-- Adding a search form  -->
-        <!-- <div class="col-sm-4 col-md-4 navbar-right"> -->
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
-
                 <form role="search" action="{% url 'search_results' %}">
-
                     <div class="searchbar">
                         <input type="text" class="search_input" placeholder="Search" name="Image">
                         <div class="input-group-btn">
@@ -42,41 +39,42 @@
 
                 </form>
             </div>
-            <!-- search form end -->
+        </div>
+        <!-- search form end -->
 
-            <div class="row">
-                {% if images%}
-                <h2>Found {{ images|length }} of searched term {{message}}</h2>
-                {% else %}
+        <div class="row">
+            {% if images%}
+            <h2>Found {{ images|length }} of searched term {{message}}</h2>
+            {% else %}
+            <h2>
                 <h2>
-                    <h2>
-                        {% endif %}
+                    {% endif %}
 
-            </div>
+        </div>
 
-            <div class="row">
+        <div class="row">
 
-                {% if images %}
-                {% for image in images %}
-                <div class="col-sm-6 col-md-3">
-                    <h1>{{image.Category}}</h1>
-                </div>
-                {% endfor %}
-                {% endif %}
-            </div>
-
-
-            {% for image in images%}
-
-            <div class="row">
-
-                <!--Display news images  -->
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <img src="{{image.photoimage.url}}" class="img-responsive" alt="Image">
-                </div>
-
+            {% if images %}
+            {% for image in images %}
+            <div class="col-sm-6 col-md-3">
+                <h1>{{image.Category}}</h1>
             </div>
             {% endfor %}
+            {% endif %}
+        </div>
+
+
+        {% for image in images%}
+
+        <div class="row">
+
+            <!--Display news images  -->
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img src="{{image.photoimage.url}}" class="img-responsive" alt="Image">
+            </div>
+
+        </div>
+        {% endfor %}
 
 
     </body>
