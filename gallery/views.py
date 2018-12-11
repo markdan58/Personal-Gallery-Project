@@ -17,7 +17,6 @@ def details(request,image_id):
 
 
 def search_results(request):
-
     if 'Image' in request.GET and request.GET["Image"]:
         image = request.GET.get("Image")
         looked_Image = Image.search_category(image)
